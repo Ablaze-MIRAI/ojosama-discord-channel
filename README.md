@@ -31,7 +31,7 @@ copy config.sample.ts config.ts
 
 DiscordAPIのBot用トークンを取得してください
 
-```json
+```js
 module.exports.config = {
     // Discord API Token
     DISCORD_API_TOKEN: "[DISCORD BOT TOKEN]",
