@@ -1,0 +1,12 @@
+# Node Modules
+node_modules
+
+# API
+config.sample.ts
+
+# Data
+dist/*
+data/*
+
+# Keep .gitKeep
+!.gitKeep

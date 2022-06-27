@@ -1,0 +1,13 @@
+{
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "discord.js": "^13.8.1",
+    "node-go-require": "^2.0.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
