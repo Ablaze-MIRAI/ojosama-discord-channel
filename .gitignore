@@ -1,6 +1,9 @@
 # Node Modules
 node_modules
 
+# Build
+build
+
 # API
 config.sample.ts
 
