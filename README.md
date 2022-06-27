@@ -67,3 +67,9 @@ cd ojosama/cmd/ojosama && go build -o ../../../ojosama *.go && cd ../../../../
 ```bash
 node build/main.js
 ```
+
+## License
+
+にじさんじ所属の壱百満天原サロメさん及びにじさんじ関係者、ファンコミュニティの迷惑にならないように使用をお願いします。
+
+壱百満天原サロメさんのキャラクターを題材にした二次創作作品ですので[ANYCOLOR二次創作ガイドライン](https://event.nijisanji.app/guidelines/)に従います
