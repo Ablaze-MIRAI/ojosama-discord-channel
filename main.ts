@@ -88,7 +88,7 @@ client.on("interactionCreate", async (interaction:any) =>{
                 embeds: [embedNormal({title: "有効化しました"})]
             });
             const enabled_server = fs.readdirSync("data/").length;
-            LOG(false, `Chat enabled (${enabled_server-1} Chat)`);
+            LOG(false, `Chat enabled (${enabled_server} Chat)`);
             return;
         }else if(interaction.options.getInteger("type") === 0){
             if(!fs.existsSync(`data/${interaction.channel.id}.json`)) return interaction.reply({
@@ -119,7 +119,7 @@ client.on("interactionCreate", async (interaction:any) =>{
             embeds: [embedNormal({
                 title: "ojosamaチャット HELP",
                 description: "``` /ojosama-chat ``` でチャットの有効/無効を設定できます"
-            }).addField("INFO", `\`${enabled_server-1}\`チャンネルで有効化されています`)
+            }).addField("INFO", `\`${enabled_server}\`チャンネルで有効化されています`)
             .addField("About", "このBotはオープンソースです。\nすべてのソースコードを[Ablaze-MIRAI/ojosama-discord-channel](https://github.com/Ablaze-MIRAI/ojosama-discord-channel)で公開しています\n\n変換には[jiro4989/ojosama](https://github.com/jiro4989/ojosama)を使用させていただきました\nお心より感謝いたしますわ")]
         })
     }

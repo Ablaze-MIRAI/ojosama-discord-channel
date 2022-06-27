@@ -9,6 +9,7 @@ config.ts
 
 # Data
 dist/*
+data/*
 
 # Keep .gitKeep
 !.gitKeep
