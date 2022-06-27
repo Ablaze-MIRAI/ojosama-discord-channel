@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2020",
     "lib": ["es2020"],
+    "module": "commonjs",
     "sourceMap": false,
     "outDir": "./build",
     "rootDir": ".",
@@ -15,5 +16,8 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "config.sample.ts"
+  ]
 }

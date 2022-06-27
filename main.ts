@@ -16,6 +16,14 @@ client.on("ready", async () =>{
         exit(0);
         return;
     }
+    try{
+        if (!fs.existsSync("./data")) {
+            fs.mkdirSync("./data");
+        }
+    }catch(e){
+        LOG(true, "Failed to create folder");
+        exit(0);
+    }
     LOG(false, `Connected to DiscordAPI(${client.ws.gateway}) as ${client.user.tag}`);
     const commands = [
         {

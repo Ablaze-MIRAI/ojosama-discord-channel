@@ -5,11 +5,10 @@ node_modules
 build
 
 # API
-config.sample.ts
+config.ts
 
 # Data
 dist/*
-data/*
 
 # Keep .gitKeep
 !.gitKeep

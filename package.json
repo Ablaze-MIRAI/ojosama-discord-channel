@@ -11,6 +11,6 @@
   },
   "scripts": {
     "dev": "ts-node main.ts",
-    "compile": "tsc"
+    "build": "tsc"
   }
 }
