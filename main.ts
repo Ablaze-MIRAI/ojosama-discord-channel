@@ -9,13 +9,13 @@ LOG(false, "Bot starting");
 const client = new Client({intents: [Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILDS]});
 
 client.on("ready", async () =>{
-    try{
+    /*try{
         ojosamaCmdCheck();
     }catch(e){
         LOG(true, `ojosama command not found / ${e}`);
         exit(0);
         return;
-    }
+    }*/
     try{
         if (!fs.existsSync("./data")) {
             fs.mkdirSync("./data");
@@ -88,7 +88,7 @@ client.on("interactionCreate", async (interaction:any) =>{
                 embeds: [embedNormal({title: "有効化しました"})]
             });
             const enabled_server = fs.readdirSync("data/").length;
-            LOG(false, `Chat enabled (${enabled_server} Chat)`);
+            LOG(false, `Chat enabled (${enabled_server-1} Chat)`);
             return;
         }else if(interaction.options.getInteger("type") === 0){
             if(!fs.existsSync(`data/${interaction.channel.id}.json`)) return interaction.reply({
@@ -119,7 +119,7 @@ client.on("interactionCreate", async (interaction:any) =>{
             embeds: [embedNormal({
                 title: "ojosamaチャット HELP",
                 description: "``` /ojosama-chat ``` でチャットの有効/無効を設定できます"
-            }).addField("INFO", `\`${enabled_server}\`チャンネルで有効化されています`)
+            }).addField("INFO", `\`${enabled_server-1}\`チャンネルで有効化されています`)
             .addField("About", "このBotはオープンソースです。\nすべてのソースコードを[Ablaze-MIRAI/ojosama-discord-channel](https://github.com/Ablaze-MIRAI/ojosama-discord-channel)で公開しています\n\n変換には[jiro4989/ojosama](https://github.com/jiro4989/ojosama)を使用させていただきました\nお心より感謝いたしますわ")]
         })
     }
@@ -147,7 +147,7 @@ client.on("messageCreate", async (message:any) =>{
 
     // Message Delete
     await message.delete();
-    const ojosamaResult:string = ojosama(message.content);
+    const ojosamaResult:string = await ojosama(message.content);
     if(!ojosamaResult) return message.channel.send({
         embeds: [embedError({title: "変換に失敗しました"})]
     });
@@ -165,4 +165,8 @@ client.on("messageCreate", async (message:any) =>{
     return;
 });
 
-client.login(config.DISCORD_API_TOKEN);
+try{
+    client.login(config.DISCORD_API_TOKEN);
+}catch(e){
+    LOG(true, `DiscordAPI connect error / ${e}`);
+}

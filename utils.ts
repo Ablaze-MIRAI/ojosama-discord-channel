@@ -1,5 +1,8 @@
 /// <reference path="./@types/utils.d.ts"/>
-const fs = require("fs")
+
+const { config } = require("./config")
+const fs = require("fs");
+const axios = require("axios");
 const childProcess = require("child_process");
 const { MessageEmbed } = require("discord.js");
 
@@ -8,10 +11,12 @@ const ojosamaCmdCheck = () =>{
     return res.toString();
 }
 
-const ojosama = (text:string) =>{
+const ojosama = async (text:string) =>{
     try{
-        const res = childProcess.execFileSync("dist/ojosama", ["-t", text]);
-        return res.toString();
+        const res = await axios.post(`${config.API}/api/ojosama`, {
+            Text: text
+        })
+        return res.data.Result;
     }catch(e){
         LOG(true, e);
         return false;
@@ -52,7 +57,7 @@ const LOG = (error:boolean, text:any) =>{
     const i = dh.getMinutes();
     const s = dh.getSeconds();
     const day = `${y}/${m}/${d}-${h}:${i}:${s}`;
-    const type = error?"\x1b[31mERROR\x1b[0m":"LOG";
+    const type = error?"\x1b[31mERROR\x1b[0m":" LOG ";
     console.log(`${day}|${type}|${text}`);
 }
 
