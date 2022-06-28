@@ -14,3 +14,4 @@ data/*
 
 # Keep .gitKeep
 !.gitKeep
+!Dockerfile
