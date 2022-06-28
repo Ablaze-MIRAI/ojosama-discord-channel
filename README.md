@@ -10,11 +10,9 @@
 
 ## Run
 
-- `NodeJS v16.15.1`
-- `Go v1.8.3`
-- `Yarn 1.22.19`
+- `Docker v20.10.17`
 
-以上が必要になります
+での動作を確認しています
 
 ### 1.リポジトリのクローン
 
@@ -25,7 +23,7 @@ cd ojosama-discord-channel
 
 ### 2.設定の記述
 
-`config.ts`をサンプルファイルから作成にします
+`config.ts`をサンプルファイルから作成します
 
 ```bash
 # Linux
@@ -35,9 +33,10 @@ cp config.sample.ts config.ts
 copy config.sample.ts config.ts
 ```
 
-DiscordAPIのBot用トークンを取得してください
+[Discord Developer Portal](https://discord.com/developers/applications/)からDiscordAPIのBot用トークンを取得してください
 
 ```js
+// config.ts
 module.exports.config = {
     // Discord API Token
     DISCORD_API_TOKEN: "[DISCORD BOT TOKEN]",
@@ -51,31 +50,19 @@ module.exports.config = {
 }
 ```
 
-### 3.依存パッケージのインストールとビルド
+### 3.コンテナの起動
 
 ```bash
-# 依存パッケージをインストールしTypeScriptをビルド
-yarn install
-yarn build
+docker compose up
 
-# 依存しているソフトウェアをダウンロード
-cd dist && git clone https://github.com/jiro4989/ojosama
-
-# Windows
-cd ojosama/cmd/ojosama && go build -o ../../../ojosama.exe . && cd ../../../../
-
-# Linux 
-cd ojosama/cmd/ojosama && go build -o ../../../ojosama *.go && cd ../../../../
-```
-
-### 4.実行
-
-```bash
-node build/main.js
+# バックグラウンドで実行
+docker compose up -d
 ```
 
 ## License
 
-にじさんじ所属の壱百満天原サロメさん及びにじさんじ関係者、ファンコミュニティの迷惑にならないように使用をお願いします。
+**にじさんじ所属の壱百満天原サロメさん及びにじさんじ関係者、ファンコミュニティの迷惑にならないように使用をお願いします。**
 
-壱百満天原サロメさんのキャラクターを題材にした二次創作作品ですので[ANYCOLOR二次創作ガイドライン](https://event.nijisanji.app/guidelines/)に従います
+変換には[jiro4989/ojosama-web](https://github.com/jiro4989/ojosama-web)を使用しています。ありがとうございます。
+
+壱百満天原サロメさんを題材にした二次創作作品ですので[ANYCOLOR二次創作ガイドライン](https://event.nijisanji.app/guidelines/)に従います
