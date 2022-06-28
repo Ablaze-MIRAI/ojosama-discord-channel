@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  api:
+    build: ./api
+    container_name: api
+  
+  bot:
+    depends_on:
+      - api
+    build: "."
+    volumes:
+      - ./data:/usr/src/app/data
+    container_name: bot
+  
