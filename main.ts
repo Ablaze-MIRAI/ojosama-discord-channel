@@ -165,8 +165,4 @@ client.on("messageCreate", async (message:any) =>{
     return;
 });
 
-try{
-    client.login(config.DISCORD_API_TOKEN);
-}catch(e){
-    LOG(true, `DiscordAPI connect error / ${e}`);
-}
+client.login(config.DISCORD_API_TOKEN);
