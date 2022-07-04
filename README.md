@@ -2,6 +2,8 @@
 
 このBotは指定したチャンネルでの発言をすべて壱百満天原サロメお嬢様風の口調に変換します
 
+[Video](https://user-images.githubusercontent.com/67790884/177174402-cc30d9ae-2b7a-49f8-b55b-4d4f600b282e.mp4)
+
 ## Use
 
 [このBotを招待する](https://discord.com/api/oauth2/authorize?client_id=990955234840965180&permissions=2684382288&scope=bot%20applications.commands)
