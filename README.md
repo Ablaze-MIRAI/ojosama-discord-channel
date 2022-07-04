@@ -6,7 +6,7 @@
 
 ## Use
 
-[このBotを招待する](https://discord.com/api/oauth2/authorize?client_id=990955234840965180&permissions=2684382288&scope=bot%20applications.commands)
+[このBotを招待する](https://aka.ablaze.one/ojosama)
 
 `/help`でBotの使い方が表示されます
 
