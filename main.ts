@@ -165,4 +165,8 @@ client.on("messageCreate", async (message:any) =>{
     return;
 });
 
+client.on("shardError", (e:any) =>{
+    LOG(true, `${e.message}`);
+});
+
 client.login(config.DISCORD_API_TOKEN);
