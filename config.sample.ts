@@ -3,7 +3,7 @@ module.exports.config = {
     DISCORD_API_TOKEN: undefined,
 
     // OJOSAMA API URL
-    API: "http://api:1323",
+    API: "https://api.ojosama.jiro4989.com",
 
     // Debug
     // Debug discord server's ID

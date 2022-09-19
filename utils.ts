@@ -6,16 +6,16 @@ const axios = require("axios");
 const childProcess = require("child_process");
 const { MessageEmbed } = require("discord.js");
 
-const ojosamaCmdCheck = () =>{
+/*const ojosamaCmdCheck = () =>{
     const res = childProcess.execFileSync("dist/ojosama", ["-v"]);
     return res.toString();
-}
+}*/
 
 const ojosama = async (text:string) =>{
     try{
-        const res = await axios.post(`${config.API}`, {
+        const res = await axios.post(config.API, {
             Text: text
-        })
+        });
         return res.data.Result;
     }catch(e){
         LOG(true, e);
