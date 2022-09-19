@@ -13,7 +13,7 @@ const ojosamaCmdCheck = () =>{
 
 const ojosama = async (text:string) =>{
     try{
-        const res = await axios.post(`${config.API}/api/ojosama`, {
+        const res = await axios.post(`${config.API}`, {
             Text: text
         })
         return res.data.Result;
