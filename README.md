@@ -6,8 +6,6 @@
 
 ## Use
 
-[このBotを招待する](https://aka.ablaze.one/ojosama)
-
 `/help`でBotの使い方が表示されます
 
 ## Run
